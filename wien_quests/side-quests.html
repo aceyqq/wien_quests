@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#111513">
+	<title>Side-Quests | Wien Quests</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="fotoquest.js" defer></script>
+	<script src="site-quests.js" defer></script>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="Zur Startseite">WQ<span>.</span></a>
+		<a class="settings-link" href="legalnotice.html" aria-label="Legalnotice" title="Legalnotice">!</a>
+	</header>
+
+	<main class="page-content side-page">
+		<section class="intro" aria-labelledby="page-title">
+			<p class="eyebrow">Kleine Aufgaben, neue Eindrücke</p>
+			<h1 id="page-title">Side-<span>Quests</span></h1>
+			<p class="intro-copy">Schließe eine Aufgabe ab, um sie dauerhaft als erledigt zu markieren.</p>
+		</section>
+
+		<section class="side-quest-list" aria-label="Side-Quests">
+			<article class="side-quest" data-side-quest="side-01">
+				<div class="side-quest-heading">
+					<span class="quest-number">01</span>
+					<div>
+						<h2>Neue Eindrücke</h2>
+						<p>Wie viele neue Orte hast du heute entdeckt?</p>
+					</div>
+				</div>
+				<form class="side-quest-content" data-number-quest data-quest-id="side-01">
+					<label for="places-count">Anzahl der Orte</label>
+					<div class="side-quest-controls">
+						<input id="places-count" name="count" type="number" min="0" step="1" inputmode="numeric" required>
+						<button class="upload-button" type="submit">Quest abschließen</button>
+					</div>
+				</form>
+				<p class="side-quest-status" role="status" aria-live="polite"></p>
+			</article>
+
+			<article class="side-quest" data-side-quest="side-02">
+				<div class="side-quest-heading">
+					<span class="quest-number">02</span>
+					<div>
+						<h2>Ein neuer Lieblingsort</h2>
+						<p>Finde einen Ort in Wien, den du vorher noch nicht kanntest.</p>
+					</div>
+				</div>
+				<div class="side-quest-content">
+					<button class="upload-button" type="button" data-done-quest="side-02">Done</button>
+				</div>
+				<p class="side-quest-status" role="status" aria-live="polite"></p>
+			</article>
+
+			<article class="side-quest" data-side-quest="side-03">
+				<div class="side-quest-heading">
+					<span class="quest-number">03</span>
+					<div>
+						<h2>Dein Wien-Rating</h2>
+						<p>Wie gefällt dir dein Wien-Abenteuer bisher?</p>
+					</div>
+				</div>
+				<div class="side-quest-content">
+					<label for="city-rating">Bewertung: <output id="rating-value" for="city-rating">5</output>/10</label>
+					<input id="city-rating" data-rating-input type="range" min="1" max="10" step="1" value="5">
+					<button class="upload-button" type="button" data-rating-quest="side-03">Rating speichern</button>
+				</div>
+				<p class="side-quest-status" role="status" aria-live="polite"></p>
+			</article>
+
+			<article class="side-quest" data-side-quest="side-04">
+				<div class="side-quest-heading">
+					<span class="quest-number">04</span>
+					<div>
+						<h2>Abendmoment</h2>
+						<p>Genieße einen besonderen Moment in Wien zwischen 18:00 und 24:00 Uhr.</p>
+					</div>
+				</div>
+				<form class="side-quest-content" data-time-photo-quest data-quest-id="side-04">
+					<label for="evening-photo">Foto auswählen</label>
+					<input id="evening-photo" name="photo" type="file" accept="image/*" required disabled>
+					<button class="upload-button" type="submit" data-time-quest="side-04" disabled>Foto hochladen</button>
+				</form>
+				<p class="side-quest-status" data-time-status role="status" aria-live="polite"></p>
+			</article>
+
+			<article class="side-quest" data-side-quest="side-05">
+				<div class="side-quest-heading">
+					<span class="quest-number">05</span>
+					<div>
+						<h2>Ein hilfreicher Wien-Link</h2>
+						<p>Teile einen Link zu einem Ort, Tipp oder Erlebnis in Wien.</p>
+					</div>
+				</div>
+				<form class="side-quest-content" data-link-quest data-quest-id="side-05">
+					<label for="side-link">Link</label>
+					<input id="side-link" name="link" type="url" maxlength="1800" inputmode="url" autocomplete="url" placeholder="https://…" required>
+					<button class="upload-button" type="submit">Link an Discord senden</button>
+				</form>
+				<p class="side-quest-status" role="status" aria-live="polite"></p>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
