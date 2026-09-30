@@ -1,9 +1,9 @@
 (() => {
 	const storageKey = "wienQuestsCompleted";
 	const riddles = [
-		{ id: "raetsel-01", answers: ["Donau"] },
+		{ id: "raetsel-01", answers: ["Stephansdom", "Domkirche St. Stephan", "Dom"] },
 		{ id: "raetsel-02", answers: ["Prater", "Wiener Prater"] },
-		{ id: "raetsel-03", answers: ["1. Bezirk", "Erster Bezirk", "Innere Stadt"] }
+		{ id: "raetsel-03", answers: ["Carl", "Erzherzog-Carl-Reiterdenkmal", "Erzherzog-Carl"] }
 	];
 
 	function normalizeAnswer(value) {
