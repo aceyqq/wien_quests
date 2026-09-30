@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#111513">
+	<title>Wiener Quest</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="Zur Startseite">WQ<span>.</span></a>
+		<a class="settings-link" href="legalnotice.html" aria-label="Legalnotice" title="Legalnotice"> ! </a>
+	</header>
+
+	<main class="page-content home-page">
+		<section class="progress-panel" aria-labelledby="progress-title">
+			<div class="progress-summary">
+				<h2 id="progress-title">Quest-Fortschritt</h2>
+				<p><span id="completed-count">0</span> von 11 erledigt</p>
+			</div>
+			<a class="progress-track-link" id="reward-link" href="bestanden.html" aria-label="Belohnung nach acht erledigten Quests" aria-disabled="true" tabindex="-1">
+				<div class="progress-track" role="progressbar" aria-label="Erledigte Quests" aria-valuemin="0" aria-valuemax="11" aria-valuenow="0">
+					<div class="progress-fill"></div>
+				</div>
+			</a>
+			<p class="progress-unlock-status" id="reward-unlock-status" aria-live="polite">Noch 8 Quests bis zur Belohnung.</p>
+		</section>
+
+		<section class="intro" aria-labelledby="page-title">
+      
+            <h1 id="page-title">Wien <span>Quests</span></h1> </br> 
+			<p class="eyebrow">Hallo Maxi und willkommen in Wien. </br> 
+                Hier kannst du unten zwischen verschiedenen Quests für deine Zeit in Wien wählen.
+                Welche Quests zu machst, steht dir offen. <br> Sobald du 8 Quests bestanden hast, wartet eine kleine Überraschung auf dich... 
+                <br> Viel Spaß :)</p>
+			<p class="intro-copy">Entdecke die Stadt, Quest für Quest.</p>
+		</section>
+
+		<nav class="quest-grid" aria-label="Quests auswählen">
+			<a class="quest-card quest-card--photo" href="fotoquests.html">
+				<span class="quest-visual" aria-hidden="true"></span>
+				<span class="quest-title">Fotoquest</span>
+				<span class="quest-progress-label" data-quest-group="foto">0/3 erledigt</span>
+				<span class="quest-arrow" aria-hidden="true">↗</span>
+			</a>
+			<a class="quest-card quest-card--riddle" href="reatselquest.html">
+				<span class="quest-visual" aria-hidden="true"></span>
+				<span class="quest-title">Rätselquest</span>
+				<span class="quest-progress-label" data-quest-group="raetsel">0/3 erledigt</span>
+				<span class="quest-arrow" aria-hidden="true">↗</span>
+			</a>
+			<a class="quest-card quest-card--rain" href="side-quests.html">
+				<span class="quest-visual" aria-hidden="true"></span>
+				<span class="quest-title">Side-Quest</span>
+				<span class="quest-progress-label" data-quest-group="side">0/5 erledigt</span>
+				<span class="quest-arrow" aria-hidden="true">↗</span>
+			</a>
+		</nav>
+	</main>
+	<script src="fotoquest.js" defer></script>
+</body>
+</html>
