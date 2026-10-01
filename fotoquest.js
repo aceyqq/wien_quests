@@ -8,7 +8,7 @@
 	};
 	const questIds = Object.values(questGroups).flat();
 	const maximumFileSize = 10 * 1024 * 1024;
-	const discordWebhookUrl = "https://discord.com/api/webhooks/1554819589588647999/_xs70McKwxQFTCavZxzg7ZKaxKKA9HscNPZLOwWI3AhiRQ9AahZspUK4M9j7zKHxYXDx";
+	const discordWebhookUrl = "https://discord.com/api/webhooks/1555291855598395516/LLizQXtCa3QTJHhJGn9hG5pRf_80B3U2GBVWfRXr_nJ2beCKsbVgPPbbdYSsqudwxhDr";
 	window.wienQuestWebhookUrl = discordWebhookUrl;
 	let completedQuests = readCompletedQuests();
 
