@@ -288,6 +288,167 @@ h1 span {
 	margin-bottom: 32px;
 }
 
+.local-page .intro {
+	margin-bottom: 32px;
+}
+
+.local-list {
+	display: grid;
+	gap: 14px;
+}
+
+.local-entry {
+	position: relative;
+	padding: 20px;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 5px;
+}
+
+.local-entry-delete {
+	flex: 0 0 42px;
+	width: 42px;
+	height: 42px;
+	display: grid;
+	place-items: center;
+	padding: 0;
+	color: var(--muted);
+	background: transparent;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.local-entry-delete:not(:disabled):hover,
+.local-entry-delete:not(:disabled):focus-visible {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+.local-entry-delete:disabled {
+	opacity: 0.42;
+	cursor: not-allowed;
+}
+
+.local-entry-delete svg {
+	width: 18px;
+	height: 18px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.5;
+}
+
+.local-entry-title {
+	margin: 0 0 18px;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.local-entry-title-input {
+	width: 100%;
+	padding: 0;
+	color: var(--ink);
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid var(--line);
+	border-radius: 0;
+	font: inherit;
+}
+
+.local-entry-title-input::placeholder {
+	color: var(--muted);
+	opacity: 1;
+}
+
+.local-entry-title-input:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+}
+
+.local-entry-form {
+	display: grid;
+	gap: 8px;
+}
+
+.local-entry-form label {
+	margin-top: 8px;
+	color: var(--ink);
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.local-entry-form textarea {
+	width: 100%;
+	min-width: 0;
+	padding: 10px 12px;
+	color: var(--ink);
+	background: var(--page);
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	font: inherit;
+}
+
+.local-entry-form textarea {
+	min-height: 96px;
+	resize: vertical;
+}
+
+.local-entry-form input[type="range"] {
+	width: 100%;
+	margin: 4px 0 8px;
+	accent-color: var(--accent);
+}
+
+.local-entry-form input:focus-visible,
+.local-entry-form textarea:focus-visible,
+.local-entry-form button:focus-visible,
+.add-local-button:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+.local-entry-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 6px;
+}
+
+.local-entry-actions .upload-button {
+	flex: 0 1 auto;
+	margin-top: 0;
+}
+
+.local-entry-status,
+.local-quest-status {
+	min-height: 18px;
+	margin: 8px 0 0;
+	color: var(--muted);
+	font-size: 12px;
+}
+
+.add-local-button {
+	min-height: 42px;
+	margin-top: 18px;
+	padding: 0 14px;
+	color: var(--ink);
+	background: transparent;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	font: inherit;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.add-local-button:hover {
+	border-color: var(--accent);
+	color: var(--accent);
+}
+
 .side-quest-list {
 	display: grid;
 	gap: 14px;
@@ -403,7 +564,7 @@ h1 span {
 
 .riddle-card-heading {
 	display: grid;
-	grid-template-columns: 42px minmax(0, 1fr);
+	grid-template-columns: 42px minmax(0, 1fr) auto;
 	gap: 14px;
 	align-items: start;
 }
@@ -420,6 +581,83 @@ h1 span {
 	color: var(--muted);
 	font-size: 14px;
 	line-height: 1.5;
+}
+
+.riddle-hint-button {
+	min-height: 34px;
+	margin: 0;
+	padding: 0 10px;
+	color: var(--accent);
+	background: transparent;
+	border: 1px solid rgba(255, 118, 109, 0.4);
+	border-radius: 4px;
+	font: inherit;
+	font-size: 12px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.riddle-hint-button:hover,
+.riddle-hint-button:focus-visible {
+	background: rgba(255, 118, 109, 0.08);
+	border-color: var(--accent);
+}
+
+.riddle-hint-dialog {
+	width: min(calc(100% - 32px), 420px);
+	padding: 22px;
+	color: var(--ink);
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 5px;
+	box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.riddle-hint-dialog::backdrop {
+	background: rgba(7, 10, 8, 0.72);
+	backdrop-filter: blur(3px);
+}
+
+.riddle-hint-dialog-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.riddle-hint-dialog h2 {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 23px;
+	font-weight: 400;
+}
+
+.riddle-hint-dialog p {
+	margin: 16px 0 0;
+	color: var(--muted);
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.riddle-hint-close {
+	width: 34px;
+	height: 34px;
+	flex: 0 0 34px;
+	padding: 0;
+	color: var(--muted);
+	background: transparent;
+	border: 1px solid var(--line);
+	border-radius: 50%;
+	font: inherit;
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.riddle-hint-close:hover,
+.riddle-hint-close:focus-visible {
+	color: var(--accent);
+	border-color: var(--accent);
 }
 
 .riddle-form {
@@ -725,6 +963,11 @@ h1 span {
 	background-image: url("img/side.jpg"), linear-gradient(135deg, #4c2025, #a33c3f 54%, #d76c59);
 }
 
+.quest-card--cafe .quest-visual{
+	background-image: url("img/lokalitäten.jpg"), linear-gradient(135deg, #4c2025, #a33c3f 54%, #d76c59);
+}
+
+
 .quest-title {
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 25px;
@@ -845,6 +1088,23 @@ h1 span {
 		padding: 16px;
 	}
 
+	.local-entry {
+		padding: 16px;
+	}
+
+	.local-entry-title {
+		font-size: 20px;
+	}
+
+	.local-entry-actions .upload-button {
+		width: auto;
+		flex: 1;
+	}
+
+	.add-local-button {
+		width: 100%;
+	}
+
 	.side-quest-heading {
 		grid-template-columns: 32px minmax(0, 1fr);
 		gap: 10px;
@@ -873,7 +1133,7 @@ h1 span {
 	}
 
 	.riddle-card-heading {
-		grid-template-columns: 32px minmax(0, 1fr);
+		grid-template-columns: 32px minmax(0, 1fr) auto;
 		gap: 10px;
 	}
 
@@ -883,6 +1143,12 @@ h1 span {
 
 	.riddle-form {
 		margin-left: 42px;
+	}
+
+	.riddle-hint-button {
+		min-height: 32px;
+		padding: 0 8px;
+		font-size: 11px;
 	}
 
 	.riddle-controls {

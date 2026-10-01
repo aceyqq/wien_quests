@@ -3,7 +3,8 @@
 	const questGroups = {
 		foto: ["foto-01", "foto-02", "foto-03"],
 		raetsel: ["raetsel-01", "raetsel-02", "raetsel-03"],
-		side: ["side-01", "side-02", "side-03", "side-04", "side-05"]
+		side: ["side-01", "side-02", "side-04", "side-05"],
+		lokal: ["lokal-01"]
 	};
 	const questIds = Object.values(questGroups).flat();
 	const maximumFileSize = 10 * 1024 * 1024;
@@ -14,7 +15,15 @@
 	function readCompletedQuests() {
 		try {
 			const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
-			return Array.isArray(saved) ? saved.filter((id) => questIds.includes(id)) : [];
+			const completed = Array.isArray(saved) ? saved.filter((id) => questIds.includes(id)) : [];
+			if (Array.isArray(saved) && completed.length !== saved.length) {
+				try {
+					localStorage.setItem(storageKey, JSON.stringify(completed));
+				} catch {
+					return completed;
+				}
+			}
+			return completed;
 		} catch {
 			return [];
 		}

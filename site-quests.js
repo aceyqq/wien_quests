@@ -1,6 +1,6 @@
 (() => {
 	const storageKey = "wienQuestsCompleted";
-	const questIds = ["side-01", "side-02", "side-03", "side-04", "side-05"];
+	const questIds = ["side-01", "side-02", "side-04", "side-05"];
 	let completedQuests = readCompletedQuests();
 
 	function readCompletedQuests() {
@@ -73,17 +73,6 @@
 		for (const button of document.querySelectorAll("[data-done-quest]")) {
 			button.addEventListener("click", () => completeQuest(button.dataset.doneQuest));
 		}
-	}
-
-	function setupRatingQuest() {
-		const input = document.querySelector("[data-rating-input]");
-		const output = document.querySelector("#rating-value");
-		const button = document.querySelector("[data-rating-quest]");
-		input.addEventListener("input", () => {
-			output.value = input.value;
-			output.textContent = input.value;
-		});
-		button.addEventListener("click", () => completeQuest(button.dataset.ratingQuest));
 	}
 
 	function setupLinkQuest() {
@@ -250,7 +239,6 @@
 	syncCompletedQuests();
 	setupNumberQuest();
 	setupDoneQuest();
-	setupRatingQuest();
 	setupLinkQuest();
 	setupTimePhotoQuest();
 })();

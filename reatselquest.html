@@ -6,7 +6,7 @@
 	<meta name="theme-color" content="#111513">
 	<title>Rätselquest | Wien Quests</title>
 	<link rel="stylesheet" href="main.css">
-	<script src="reatselquest.js" defer></script>
+	<script src="reatselquest.js" defer></script>s
 </head>
 <body>
 	<header class="site-header">
@@ -18,7 +18,7 @@
 		<section class="intro" aria-labelledby="page-title">
 			<p class="eyebrow">Drei Fragen über Wien</p>
 			<h1 id="page-title">Rätsel<span>quest</span></h1>
-			<p class="intro-copy">Gib deine Antwort ein und prüfe, ob sie stimmt.</p>
+			<p class="intro-copy">Gib deine Antwort ein und prüfe, ob sie stimmt. <br> Falls du gar nicht weiterkommst, hast du die Möglichkeit dir einen Tipp anzusehen. Das hat keine Auswirkungen auf die Quest.</p>
 		</section>
 
 		<section class="riddle-list" aria-label="Wien-Rätsel">
@@ -26,9 +26,10 @@
 				<div class="riddle-card-heading">
 					<span class="quest-number">01</span>
 					<div>
-						<h2>Ein Gebäude</h2>
-						<p>Mein Dach hat ein Zickzack-Muster aus über 200.000 Ziegeln und unter mir liegen die Katakomben.</p>
+						<h2>Ein Gebäude: </h2>
+						<p>Direkt am Wasser, doch den Sternen so nah.</p>
 					</div>
+					<button class="riddle-hint-button" type="button" data-riddle-hint="In mir kann man die Sterne beobachten und ein Puppenspiel von Kasperl und Pezi sehen.">Tipp</button>
 				</div>
 				<form class="riddle-form" data-riddle-form data-riddle-id="raetsel-01">
 					<label for="answer-01">Deine Antwort</label>
@@ -44,9 +45,10 @@
 				<div class="riddle-card-heading">
 					<span class="quest-number">02</span>
 					<div>
-						<h2>Ein berühmter Vergnügungspark</h2>
-						<p>Wie heißt der bekannte Wiener Park mit dem Riesenrad?</p>
+						<h2>Der Stephansdom:</h2>
+						<p>Neben dem Haupteingang des Doms befindet sich ein historisches Widerstandszeichen in Stein geritzt. Was zeigt es?</p>
 					</div>
+					<button class="riddle-hint-button" type="button" data-riddle-hint="Die zwei Zeichen befinden sich rechts vom Eingang und tragen die Bedeutung „Österreich“, durch den Anfangsbuchstaben und eine Nummer.">Tipp</button>
 				</div>
 				<form class="riddle-form" data-riddle-form data-riddle-id="raetsel-02">
 					<label for="answer-02">Deine Antwort</label>
@@ -62,9 +64,10 @@
 				<div class="riddle-card-heading">
 					<span class="quest-number">03</span>
 					<div>
-						<h2>Ein Reiter mit vier Buchstaben</h2>
-						<p>Ein Pferd, ein Reiter, und ein Name mit vier Buchstaben: Wie heißt er?</p>
+						<h2>Der Reiter:</h2>
+						<p>Ein Pferd, ein Reiter, doch sein Name ist kürzer: Wie heißt er?</p>
 					</div>
+					<button class="riddle-hint-button" type="button" data-riddle-hint="Der Reiter ist nicht allein. Nicht weit entfernt steht sein Kumpel Prinz-Eugen.">Tipp</button>
 				</div>
 				<form class="riddle-form" data-riddle-form data-riddle-id="raetsel-03">
 					<label for="answer-03">Deine Antwort</label>
@@ -76,6 +79,14 @@
 				</form>
 			</article>
 		</section>
+
+		<dialog class="riddle-hint-dialog" id="riddle-hint-dialog" aria-labelledby="riddle-hint-title">
+			<div class="riddle-hint-dialog-header">
+				<h2 id="riddle-hint-title">Tipp</h2>
+				<button class="riddle-hint-close" type="button" aria-label="Tipp schließen">×</button>
+			</div>
+			<p id="riddle-hint-text"></p>
+		</dialog>
 	</main>
 </body>
 </html>

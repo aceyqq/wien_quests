@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#111513">
+	<title>Lokalitäten | Wien Quests</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="fotoquest.js" defer></script>
+	<script src="lokal.js" defer></script>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="Zur Startseite">WQ<span>.</span></a>
+		<a class="settings-link" href="legalnotice.html" aria-label="Legalnotice" title="Legalnotice">!</a>
+	</header>
+
+	<main class="page-content local-page">
+		<section class="intro" aria-labelledby="page-title">
+			<p class="eyebrow">Deine Empfehlungen und Eindrücke</p>
+			<h1 id="page-title">Lokalitäten<span>Wiens</span></h1>
+			<p class="intro-copy">Bewerte besuchte Lokale/Cafes/Restaurants und halte deine Eindrücke fest.</p>
+		</section>
+
+		<section id="local-list" class="local-list" aria-label="Lokalbewertungen"></section>
+		<button class="add-local-button" id="add-local" type="button">+ Weiteres Lokal eintragen</button>
+		<p class="local-quest-status" id="local-quest-status" role="status" aria-live="polite"></p>
+	</main>
+</body>
+</html>

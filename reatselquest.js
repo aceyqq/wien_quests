@@ -1,8 +1,8 @@
 (() => {
 	const storageKey = "wienQuestsCompleted";
 	const riddles = [
-		{ id: "raetsel-01", answers: ["Stephansdom", "Domkirche St. Stephan", "Dom"] },
-		{ id: "raetsel-02", answers: ["Prater", "Wiener Prater"] },
+		{ id: "raetsel-01", answers: ["Urania-Sternwarte", "Urania", "Sternwarte", "Urania Sternwarte", "Urania Sternenwarte", "Urania-Sternenwarte"] },
+		{ id: "raetsel-02", answers: ["O5", "05", "O-fünf", "Null fünf"] },
 		{ id: "raetsel-03", answers: ["Carl", "Erzherzog-Carl-Reiterdenkmal", "Erzherzog-Carl"] }
 	];
 
@@ -66,6 +66,27 @@
 		form.querySelector(".riddle-feedback").classList.add("is-correct");
 	}
 
+	function setupHints() {
+		const dialog = document.querySelector("#riddle-hint-dialog");
+		const title = document.querySelector("#riddle-hint-title");
+		const text = document.querySelector("#riddle-hint-text");
+		const closeButton = dialog.querySelector(".riddle-hint-close");
+
+		for (const button of document.querySelectorAll("[data-riddle-hint]")) {
+			button.addEventListener("click", () => {
+				const number = button.closest(".riddle-card").querySelector(".quest-number").textContent;
+				title.textContent = `Tipp zu Rätsel ${number}`;
+				text.textContent = button.dataset.riddleHint;
+				dialog.showModal();
+			});
+		}
+
+		closeButton.addEventListener("click", () => dialog.close());
+		dialog.addEventListener("click", (event) => {
+			if (event.target === dialog) dialog.close();
+		});
+	}
+
 	function setupRiddles() {
 		const completed = readCompletedQuests();
 		for (const form of document.querySelectorAll("[data-riddle-form]")) {
@@ -105,4 +126,5 @@
 	}
 
 	setupRiddles();
+	setupHints();
 })();
